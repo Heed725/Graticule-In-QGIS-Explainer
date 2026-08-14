@@ -6,7 +6,7 @@
   <layer-tree-group checked="Qt::Checked" expanded="1" name="">
     <customproperties/>
     <layer-tree-layer checked="Qt::Checked" expanded="1" id="graticule_20deg_1" name="20 degree Graticule" source="../data/graticule_20deg.shp" providerKey="ogr"><customproperties/></layer-tree-layer>
-    <layer-tree-layer checked="Qt::Checked" expanded="1" id="naturalearth_lowres_1" name="Natural Earth Countries" source="../data/naturalearth_lowres.shp" providerKey="ogr"><customproperties/></layer-tree-layer>
+    <layer-tree-layer checked="Qt::Checked" expanded="1" id="naturalearth_countries_1" name="Natural Earth 1:110m Countries" source="../data/ne_110m_admin_0_countries.shp" providerKey="ogr"><customproperties/></layer-tree-layer>
   </layer-tree-group>
   <projectlayers>
     <maplayer type="vector" geometry="Line" readOnly="0" labelsEnabled="0">
@@ -15,7 +15,7 @@
       <renderer-v2 type="singleSymbol" forceraster="0" symbollevels="0" enableorderby="0"><symbols><symbol type="line" alpha="1" name="0"><layer class="SimpleLine" enabled="1" locked="0" pass="0"><Option type="Map"><Option value="80,80,80,100" type="QString" name="line_color"/><Option value="0.18" type="QString" name="line_width"/><Option value="MM" type="QString" name="line_width_unit"/></Option></layer></symbol></symbols></renderer-v2>
     </maplayer>
     <maplayer type="vector" geometry="Polygon" readOnly="0" labelsEnabled="0">
-      <id>naturalearth_lowres_1</id><datasource>../data/naturalearth_lowres.shp</datasource><layername>Natural Earth Countries</layername><provider encoding="UTF-8">ogr</provider>
+      <id>naturalearth_countries_1</id><datasource>../data/ne_110m_admin_0_countries.shp</datasource><layername>Natural Earth 1:110m Countries</layername><provider encoding="UTF-8">ogr</provider>
       <srs><spatialrefsys><authid>EPSG:4326</authid><description>WGS 84</description><projectionacronym>longlat</projectionacronym><ellipsoidacronym>EPSG:7030</ellipsoidacronym><geographicflag>true</geographicflag></spatialrefsys></srs>
       <renderer-v2 type="singleSymbol" forceraster="0" symbollevels="0" enableorderby="0"><symbols><symbol type="fill" alpha="1" name="0"><layer class="SimpleFill" enabled="1" locked="0" pass="0"><Option type="Map"><Option value="225,225,220,255" type="QString" name="color"/><Option value="80,80,80,255" type="QString" name="outline_color"/><Option value="0.18" type="QString" name="outline_width"/><Option value="MM" type="QString" name="outline_width_unit"/></Option></layer></symbol></symbols></renderer-v2>
     </maplayer>
