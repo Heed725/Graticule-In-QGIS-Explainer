@@ -4,7 +4,7 @@ A practical, beginner-friendly guide to **graticules, latitude/longitude labels,
 
 This repository includes:
 
-- a compact Natural Earth world countries shapefile (`data/naturalearth_lowres.*`)
+- a compact Natural Earth world countries shapefile (`data/ne_110m_admin_0_countries.*`)
 - a generated 20-degree latitude/longitude graticule shapefile (`data/graticule_20deg.*`)
 - an example QGIS project (`project/Graticule_In_QGIS_Example.qgs`)
 - this complete step-by-step tutorial
@@ -57,10 +57,10 @@ For a minimalist report map, use only **bottom = longitude** and **left = latitu
 Graticule-In-QGIS-Explainer/
 ├── README.md
 ├── data/
-│   ├── naturalearth_lowres.shp
-│   ├── naturalearth_lowres.shx
-│   ├── naturalearth_lowres.dbf
-│   ├── naturalearth_lowres.prj
+│   ├── ne_110m_admin_0_countries.shp
+│   ├── ne_110m_admin_0_countries.shx
+│   ├── ne_110m_admin_0_countries.dbf
+│   ├── ne_110m_admin_0_countries.prj
 │   ├── graticule_20deg.shp
 │   ├── graticule_20deg.shx
 │   ├── graticule_20deg.dbf
