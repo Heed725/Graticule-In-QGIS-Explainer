@@ -1,0 +1,42 @@
+name: Package QGIS tutorial release
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/release-package.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build release ZIP
+        shell: bash
+        run: |
+          VERSION="v1.0.0"
+          PACKAGE="Graticule-In-QGIS-Explainer-${VERSION}.zip"
+          rm -f "$PACKAGE"
+          zip -r "$PACKAGE" README.md data project scripts .github/workflows/build-shapefiles.yml \
+            -x '*.git*' '__pycache__/*' '*.pyc'
+          echo "PACKAGE=$PACKAGE" >> "$GITHUB_ENV"
+          echo "VERSION=$VERSION" >> "$GITHUB_ENV"
+
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          if gh release view "$VERSION" >/dev/null 2>&1; then
+            gh release upload "$VERSION" "$PACKAGE" --clobber
+          else
+            gh release create "$VERSION" "$PACKAGE" \
+              --title "Graticule in QGIS Explainer v1.0.0" \
+              --notes "Complete QGIS graticule tutorial package including the full README guide, Natural Earth 1:110m Admin 0 Countries shapefile, generated 20-degree graticule shapefile, example QGIS project, and reproducible data-building script."
+          fi
